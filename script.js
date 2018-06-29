@@ -24,11 +24,11 @@ function calculateResults(){
     const totalInstallments = document.querySelector("#total-installments");
 
     const p = parseFloat(amount.value); //principal
-    const i = parseFloat(interestRate.value / 100) / 12; // interest rate
+    const r = parseFloat(interestRate.value / 100) / 12; // interest rate
     const n = parseFloat(timeToRepay.value) * 12; // time in months
 
-    const x = Math.pow(1 + i, n);
-    var monthlyPay = (p * x * i) / (x - 1);
+    const x = Math.pow(1 + r, n);
+    var monthlyPay = (p * x * r) / (x - 1);
 
     if(isFinite(monthlyPay)){
         monthlyPayment.value = monthlyPay.toFixed(2);
